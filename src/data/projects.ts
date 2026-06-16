@@ -1,4 +1,3 @@
-// Phase 5 — Projects data
 export type Project = {
   id: string;
   title: string;

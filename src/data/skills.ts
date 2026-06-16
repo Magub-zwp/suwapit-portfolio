@@ -1,4 +1,3 @@
-// Phase 5 — Skills data (used in marquee)
 export type Skill = {
   name: string;
   category: "frontend" | "backend" | "tools" | "other";

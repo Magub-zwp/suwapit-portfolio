@@ -1,4 +1,3 @@
-// Phase 5 — Experience / Timeline data
 export type Experience = {
   id: string;
   role: string;

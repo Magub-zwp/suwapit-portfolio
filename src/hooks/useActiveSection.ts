@@ -1,4 +1,3 @@
-// Phase 3 — Track which section is in viewport (for Navbar active state)
 import { useState, useEffect } from "react";
 
 export function useActiveSection(sectionIds: string[]) {
