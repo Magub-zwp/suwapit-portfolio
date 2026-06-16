@@ -1,74 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
-
 @import "tailwindcss";
 
-:root {
-  /* Backgrounds */
-  --bg:          #F2EDE5;
-  --bg-surface:  #E8E1D5;
-  --bg-dark:     #2C1A10;
-  --bg-dark-2:   #3D2510;
+/* ─────────────────────────────────────────────────────────────
+   Tailwind v4 Theme — CSS-first config
+   ใน v4 ให้ใส่ theme tokens ใน @theme block แทน tailwind.config.ts
+   ───────────────────────────────────────────────────────────── */
+@theme {
+  /* ── Colors ── */
+  --color-warm:         #F2EDE5;   /* page background        → bg-warm        */
+  --color-surface:      #E8E1D5;   /* card / section bg      → bg-surface      */
+  --color-dark:         #2C1A10;   /* text + dark section bg → bg-dark, text-dark */
+  --color-dark-2:       #3D2510;   /* hover state on dark    → bg-dark-2       */
+  --color-muted:        #7A5C48;   /* secondary text         → text-muted      */
+  --color-cream:        #F2EDE5;   /* light text on dark bg  → text-cream      */
+  --color-subtle:       #A08070;   /* placeholder / caption  → text-subtle     */
+  --color-accent:       #B8723A;   /* primary CTA            → bg-accent, text-accent */
+  --color-accent-dark:  #8B5035;   /* accent hover           → bg-accent-dark  */
+  --color-gold:         #C4973D;   /* gold highlight         → text-gold       */
+  --color-border:       #DDD5C8;   /* border light           → border-border   */
+  --color-border-dark:  #4A2E1A;   /* border on dark bg      → border-border-dark */
 
-  /* Text */
-  --text:        #2C1A10;
-  --text-muted:  #7A5C48;
-  --text-light:  #F2EDE5;
-  --text-subtle: #A08070;
-
-  /* Accent */
-  --accent:      #B8723A;
-  --accent-dark: #8B5035;
-  --accent-gold: #C4973D;
-
-  /* Border */
-  --border:      #DDD5C8;
-  --border-dark: #4A2E1A;
-
-  /* Spacing scale (8px base) */
-  --space-1:  0.5rem;
-  --space-2:  1rem;
-  --space-3:  1.5rem;
-  --space-4:  2rem;
-  --space-6:  3rem;
-  --space-8:  4rem;
-  --space-12: 6rem;
-  --space-16: 8rem;
-}
-
-/* ── Base ── */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3 {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 400;
-  line-height: 1.1;
-}
-
-code, pre {
-  font-family: 'JetBrains Mono', monospace;
-}
-
-::selection {
-  background-color: var(--accent);
-  color: var(--text-light);
-}
-
-::-webkit-scrollbar       { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+  /* ── Typography — ผูกกับ CSS 
