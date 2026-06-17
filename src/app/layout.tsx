@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Suwapit Ponkul - Fullstack Developer",
+    title: "Suwapit Ponkul - JUNIOR PROGRAMMER",
   },
 };
 
