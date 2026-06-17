@@ -55,7 +55,7 @@ export default function RootLayout({
 }>) {
   const fonts = [cormorant.variable, dmSans.variable, jetbrains.variable].join(" ");
   return (
-    <html lang="en" className={fonts + " h-full antialiased"}>
+    <html lang="en" className={fonts + " antialiased"}>
       <body className="min-h-full flex flex-col">
         <Navbar />
         <main className="flex-1 pt-16">{children}</main>
