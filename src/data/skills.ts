@@ -3,6 +3,4 @@ export type Skill = {
   category: "frontend" | "backend" | "tools" | "other";
 };
 
-export const skills: Skill[] = [
-  // TODO: Phase 5 — fill in real skills
-];
+export const skills: Skill[] = [];

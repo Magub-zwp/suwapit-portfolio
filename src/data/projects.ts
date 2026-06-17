@@ -8,6 +8,4 @@ export type Project = {
   featured: boolean;
 };
 
-export const projects: Project[] = [
-  // TODO: Phase 5 — fill in real projects
-];
+export const projects: Project[] = [];

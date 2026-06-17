@@ -1,9 +1,7 @@
-// Phase 3 — Section Wrapper (handles padding + scroll reveal)
 import { cn } from "@/lib/utils";
+
 export default function SectionWrapper({
-  id,
-  className,
-  children,
+  id, className, children,
 }: {
   id?: string;
   className?: string;

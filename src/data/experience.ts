@@ -7,6 +7,4 @@ export type Experience = {
   highlights: string[];
 };
 
-export const experiences: Experience[] = [
-  // TODO: Phase 5 — fill in real experience
-];
+export const experiences: Experience[] = [];
