@@ -1,4 +1,111 @@
-// Phase 3 — Navbar
+"use client";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import StatusBadge from "@/components/ui/StatusBadge";
+import { useActiveSection } from "@/hooks/useActiveSection";
+
+const LINKS = [
+  { href: "#about",      label: "About"      },
+  { href: "#skills",     label: "Skills"     },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects",   label: "Projects"   },
+  { href: "#contact",    label: "Contact"    },
+];
+
 export default function Navbar() {
-  return <nav />;
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const activeId = useActiveSection(LINKS.map((l) => l.href.slice(1)));
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <header
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-warm/[0.96] backdrop-blur-md border-b border-border shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
+      {/* Main bar */}
+      <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+
+        {/* Brand */}
+        <Link
+          href="/"
+          className="font-serif text-dark text-[1.1rem] tracking-wide hover:text-accent transition-colors"
+        >
+          Suwapit Ponkul
+        </Link>
+
+        {/* Desktop */}
+        <div className="hidden md:flex items-center gap-7">
+          {LINKS.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={`text-sm tracking-wide transition-colors ${
+                activeId === href.slice(1)
+                  ? "text-accent"
+                  : "text-muted hover:text-dark"
+              }`}
+            >
+              {label}
+            </Link>
+          ))}
+          <StatusBadge label="Open to work" />
+        </div>
+
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden p-2 flex flex-col gap-[5px]"
+          onClick={() => setOpen((v) => !v)}
+          aria-label="Toggle menu"
+        >
+          <span
+            className={`block w-5 h-px bg-dark origin-center transition-transform duration-200 ${
+              open ? "rotate-45 translate-y-[6px]" : ""
+            }`}
+          />
+          <span
+            className={`block w-5 h-px bg-dark transition-opacity duration-200 ${
+              open ? "opacity-0" : ""
+            }`}
+          />
+          <span
+            className={`block w-5 h-px bg-dark origin-center transition-transform duration-200 ${
+              open ? "-rotate-45 -translate-y-[6px]" : ""
+            }`}
+          />
+        </button>
+      </nav>
+
+      {/* Mobile dropdown */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ${
+          open ? "max-h-80 border-t border-border" : "max-h-0"
+        } bg-warm`}
+      >
+        <div className="px-6 py-5 flex flex-col gap-5">
+          {LINKS.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={`text-sm tracking-wide transition-colors ${
+                activeId === href.slice(1) ? "text-accent" : "text-muted"
+              }`}
+              onClick={() => setOpen(false)}
+            >
+              {label}
+            </Link>
+          ))}
+          <StatusBadge label="Open to work" />
+        </div>
+      </div>
+    </header>
+  );
 }
