@@ -1,43 +1,27 @@
+"use client";
+import { useLanguage } from "@/i18n/LanguageContext";
+
 export default function About() {
-  const facts = [
-    { label: "Current Role", value: "IT Officer, BaanTonpao Subdistrict Hospital" },
-    { label: "Education", value: "2022-Present\nB.Sc. Computer Science\nRajabhat University\nGPA 3.22 | Weekend Program" },
-    { label: "Focus", value: "Junior Web Developer" },
-    { label: "Based in", value: "Chiang Mai, Thailand" },
-  ];
+  const { t } = useLanguage();
+  const facts = t.about.facts;
 
   return (
     <section id="about" className="py-20 md:py-32 bg-surface">
       <div className="max-w-5xl mx-auto px-6">
-        <p className="font-sans text-xs tracking-widest uppercase text-muted mb-4">About</p>
+        <p className="font-sans text-xs tracking-widest uppercase text-muted mb-4">{t.about.label}</p>
         <h2
           className="font-serif text-dark leading-tight mb-12 md:mb-16"
           style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
         >
-          A developer who builds
+          {t.about.headingLine1}
           <br />
-          for the real world.
+          {t.about.headingLine2}
         </h2>
         <div className="grid grid-cols-1 gap-10 md:gap-12 md:grid-cols-2">
           <div className="space-y-5 font-sans text-muted leading-relaxed">
-            <p>
-              I started in IT supporting the day-to-day operations of a
-              subdistrict hospital - managing patient data systems, MySQL
-              databases, and FreeBSD servers. That ground-level experience
-              taught me to build things that actually work under pressure.
-            </p>
-            <p>
-              While working, I picked up web development on the side - first
-              PHP, then JavaScript, then the modern React and Next.js
-              ecosystem. My thesis project, GaragePlus, is a full PWA with
-              Firebase and real-time sync. My Queue Management System runs
-              live in a hospital environment.
-            </p>
-            <p>
-              Still studying and still learning - but the projects are real,
-              the code is shipped, and I am ready to grow as a junior
-              developer on a team that builds things that matter.
-            </p>
+            {t.about.paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
           </div>
           <div className="grid grid-cols-2 gap-px bg-border">
             {facts.map((f) => (
