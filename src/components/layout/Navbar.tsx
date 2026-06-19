@@ -3,14 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import StatusBadge from "@/components/ui/StatusBadge";
 import { useActiveSection } from "@/hooks/useActiveSection";
-
-const LINKS = [
-  { href: "about",      label: "About"      },
-  { href: "skills",     label: "Skills"     },
-  { href: "experience", label: "Experience" },
-  { href: "projects",   label: "Projects"   },
-  { href: "contact",    label: "Contact"    },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 function scrollTo(id: string) {
   const el = document.getElementById(id);
@@ -22,6 +15,16 @@ function scrollTo(id: string) {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { lang, t, toggleLang } = useLanguage();
+
+  const LINKS = [
+    { href: "about",      label: t.nav.links.about      },
+    { href: "skills",     label: t.nav.links.skills     },
+    { href: "experience", label: t.nav.links.experience },
+    { href: "projects",   label: t.nav.links.projects   },
+    { href: "contact",    label: t.nav.links.contact    },
+  ];
+
   const activeId = useActiveSection(LINKS.map((l) => l.href));
 
   useEffect(() => {
@@ -63,7 +66,14 @@ export default function Navbar() {
               {label}
             </button>
           ))}
-          <StatusBadge label="Open to work" />
+          <StatusBadge label={t.nav.status} />
+          <button
+            onClick={toggleLang}
+            aria-label="Toggle language"
+            className="text-xs tracking-widest uppercase text-muted hover:text-accent transition-colors border border-border px-3 py-1.5"
+          >
+            {lang === "th" ? "EN" : "TH"}
+          </button>
         </div>
 
         {/* Mobile hamburger */}
@@ -90,7 +100,14 @@ export default function Navbar() {
               {label}
             </button>
           ))}
-          <StatusBadge label="Open to work" />
+          <StatusBadge label={t.nav.status} />
+          <button
+            onClick={() => { toggleLang(); setOpen(false); }}
+            aria-label="Toggle language"
+            className="self-start text-xs tracking-widest uppercase text-muted hover:text-accent transition-colors border border-border px-3 py-1.5"
+          >
+            {lang === "th" ? "EN" : "TH"}
+          </button>
         </div>
       </div>
     </header>

@@ -1,18 +1,21 @@
-import { projects } from "@/data/projects";
+"use client";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Projects() {
+  const { t } = useLanguage();
+  const projects = t.projects.items;
   const featured = projects.filter((p) => p.featured);
   const rest = projects.filter((p) => !p.featured);
 
   return (
     <section id="projects" className="py-20 md:py-32">
       <div className="max-w-5xl mx-auto px-6">
-        <p className="font-sans text-xs tracking-widest uppercase text-muted mb-4">Projects</p>
+        <p className="font-sans text-xs tracking-widest uppercase text-muted mb-4">{t.projects.label}</p>
         <h2
           className="font-serif text-dark leading-tight mb-12 md:mb-16"
           style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
         >
-          Things I have built.
+          {t.projects.heading}
         </h2>
         <div className="grid grid-cols-1 gap-px bg-border mb-px md:grid-cols-2">
           {featured.map((p) => (
@@ -28,13 +31,13 @@ export default function Projects() {
                 {p.url && (
                   <a href={p.url} target="_blank" rel="noopener noreferrer"
                     className="font-sans text-xs tracking-widest uppercase text-accent hover:text-dark transition-colors">
-                    Live
+                    {t.projects.live}
                   </a>
                 )}
                 {p.github && (
                   <a href={p.github} target="_blank" rel="noopener noreferrer"
                     className="font-sans text-xs tracking-widest uppercase text-muted hover:text-dark transition-colors">
-                    GitHub
+                    {t.projects.github}
                   </a>
                 )}
               </div>
@@ -55,13 +58,13 @@ export default function Projects() {
                 {p.url && (
                   <a href={p.url} target="_blank" rel="noopener noreferrer"
                     className="font-sans text-xs tracking-widest uppercase text-accent hover:text-dark transition-colors">
-                    Live
+                    {t.projects.live}
                   </a>
                 )}
                 {p.github && (
                   <a href={p.github} target="_blank" rel="noopener noreferrer"
                     className="font-sans text-xs tracking-widest uppercase text-muted hover:text-dark transition-colors">
-                    GitHub
+                    {t.projects.github}
                   </a>
                 )}
               </div>

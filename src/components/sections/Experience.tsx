@@ -1,15 +1,19 @@
-import { experiences } from "@/data/experience";
+"use client";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Experience() {
+  const { t } = useLanguage();
+  const experiences = t.experience.items;
+
   return (
     <section id="experience" className="py-20 md:py-32 bg-surface">
       <div className="max-w-5xl mx-auto px-6">
-        <p className="font-sans text-xs tracking-widest uppercase text-muted mb-4">Experience</p>
+        <p className="font-sans text-xs tracking-widest uppercase text-muted mb-4">{t.experience.label}</p>
         <h2
           className="font-serif text-dark leading-tight mb-12 md:mb-16"
           style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
         >
-          Where I have worked.
+          {t.experience.heading}
         </h2>
         <div className="relative">
           <div className="absolute left-0 top-0 bottom-0 w-px bg-border md:left-[180px]" />
