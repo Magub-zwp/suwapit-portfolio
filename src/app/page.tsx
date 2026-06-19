@@ -10,11 +10,9 @@ import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
-
   return (
     <>
       {!loaded && <CoffeeLoader onDone={() => setLoaded(true)} duration={3200} />}
-
       <div style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.8s ease" }}>
         <Hero />
         <About />

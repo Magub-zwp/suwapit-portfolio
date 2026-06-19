@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Syne, DM_Sans, JetBrains_Mono } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const syne = Syne({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-serif",
   display: "swap",
 });
 
@@ -28,23 +27,23 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Suwapit Ponkul - Fullstack Developer",
+    default: "Suwapit Ponkul - Junior Developer",
     template: "%s | Suwapit Ponkul",
   },
   description:
-    "Portfolio of Suwapit Ponkul - Fullstack Developer with experience in React, Next.js, and modern web technologies.",
-  keywords: ["fullstack developer", "react", "next.js", "typescript", "portfolio"],
+    "Portfolio of Suwapit Ponkul - Junior Developer with experience in React, Next.js, and modern web technologies.",
+  keywords: ["junior developer", "react", "next.js", "typescript", "portfolio"],
   authors: [{ name: "Suwapit Ponkul" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Suwapit Ponkul - Fullstack Developer",
-    description: "Portfolio of Suwapit Ponkul - Fullstack Developer",
+    title: "Suwapit Ponkul - Junior Developer",
+    description: "Portfolio of Suwapit Ponkul - Junior Developer",
     siteName: "Suwapit Ponkul",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Suwapit Ponkul - JUNIOR PROGRAMMER",
+    title: "Suwapit Ponkul - Junior Developer",
   },
 };
 
@@ -53,9 +52,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const fonts = [cormorant.variable, dmSans.variable, jetbrains.variable].join(" ");
+  const fonts = [syne.variable, dmSans.variable, jetbrains.variable].join(" ");
   return (
-    <html lang="en" className={fonts + " h-full antialiased"}>
+    <html lang="en" className={fonts + " antialiased"}>
       <body className="min-h-full flex flex-col">
         <Navbar />
         <main className="flex-1 pt-16">{children}</main>
