@@ -19,7 +19,7 @@
   --color-border-dark:  #4A2E1A;   /* border on dark bg      → border-border-dark */
 
   /* ── Typography — ผูกกับ CSS vars ที่ next/font inject ── */
-  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-serif: var(--font-syne), system-ui, sans-serif;
   --font-sans:  var(--font-dm-sans), system-ui, sans-serif;
   --font-mono:  var(--font-jetbrains), monospace;
 
