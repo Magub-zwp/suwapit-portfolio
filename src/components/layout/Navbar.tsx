@@ -44,20 +44,29 @@ export default function Navbar() {
       }
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+
         <Link
           href="/"
           className="font-serif text-dark text-[1.1rem] tracking-wide hover:text-accent transition-colors"
         >
           Suwapit Ponkul
         </Link>
+
+        {/* Desktop */}
         <div className="hidden md:flex items-center gap-7">
           {LINKS.map(({ href, label }) => (
-            <button key={href} onClick={() => scrollTo(href)} className={linkClass(href)}>
+            <button
+              key={href}
+              onClick={() => scrollTo(href)}
+              className={linkClass(href)}
+            >
               {label}
             </button>
           ))}
           <StatusBadge label="Open to work" />
         </div>
+
+        {/* Mobile hamburger */}
         <button
           className="md:hidden p-2 flex flex-col gap-[5px]"
           onClick={() => setOpen((v) => !v)}
@@ -68,12 +77,9 @@ export default function Navbar() {
           <span className={"block w-5 h-px bg-dark origin-center transition-transform duration-200 " + (open ? "-rotate-45 -translate-y-[6px]" : "")} />
         </button>
       </nav>
-      <div
-        className={
-          "md:hidden overflow-hidden transition-all duration-300 bg-warm " +
-          (open ? "max-h-80 border-t border-border" : "max-h-0")
-        }
-      >
+
+      {/* Mobile dropdown */}
+      <div className={"md:hidden overflow-hidden transition-all duration-300 bg-warm " + (open ? "max-h-80 border-t border-border" : "max-h-0")}>
         <div className="px-6 py-5 flex flex-col gap-5">
           {LINKS.map(({ href, label }) => (
             <button
