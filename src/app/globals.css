@@ -123,12 +123,3 @@ code, pre, kbd {
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 
-.position {
-  position: absolute;
-  height: 85%;
-  width: 85%;
-  left: -9px;
-  top: 62px;
-  right: 0;
-  transform: rotate(-2deg);
-}
