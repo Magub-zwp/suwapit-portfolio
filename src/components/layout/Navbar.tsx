@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import StatusBadge from "@/components/ui/StatusBadge";
 import { useActiveSection } from "@/hooks/useActiveSection";
@@ -48,12 +47,12 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
-        <Link
-          href="/"
+        <button
+          onClick={() => scrollTo("hero")}
           className="font-serif text-dark text-[1.1rem] tracking-wide hover:text-accent transition-colors"
         >
           Suwapit Ponkul
-        </Link>
+        </button>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-7">
