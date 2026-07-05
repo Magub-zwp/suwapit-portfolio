@@ -1,4 +1,3 @@
-import { projects } from "@/data/projects";
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -136,8 +135,6 @@ function ProjectCard({
    [ส่วนที่ 3] Section หลัก — หัวข้อ + grid การ์ด
    ============================================================ */
 export default function Projects() {
-  const featured = projects.filter((p) => p.featured);
-  const rest = projects.filter((p) => !p.featured);
   const { t } = useLanguage();
   const projects = t.projects.items;
   // เรียง featured ขึ้นก่อน (อยากแยกกลุ่ม/ทำการ์ด featured ใหญ่กว่าค่อยปรับตรงนี้)
@@ -146,68 +143,14 @@ export default function Projects() {
   return (
     <section id="projects" className="py-20 md:py-32">
       <div className="max-w-5xl mx-auto px-6">
-        <p className="font-sans text-xs tracking-widest uppercase text-muted mb-4">Projects</p>
         {/* ---------- [3.1] หัวข้อ section (เหมือนเดิม) ---------- */}
         <p className="font-sans text-xs tracking-widest uppercase text-muted mb-4">{t.projects.label}</p>
         <h2
           className="font-serif text-dark leading-tight mb-12 md:mb-16"
           style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
         >
-          Things I have built.
           {t.projects.heading}
         </h2>
-        <div className="grid grid-cols-1 gap-px bg-border mb-px md:grid-cols-2">
-          {featured.map((p) => (
-            <div key={p.id} className="bg-warm p-6 md:p-8 flex flex-col gap-4">
-              <h3 className="font-serif text-dark text-xl md:text-2xl">{p.title}</h3>
-              <p className="font-sans text-muted text-sm leading-relaxed flex-1">{p.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {p.tags.map((t) => (
-                  <span key={t} className="font-sans text-xs text-subtle border border-border px-2 py-0.5">{t}</span>
-                ))}
-              </div>
-              <div className="flex gap-4 pt-2">
-                {p.url && (
-                  <a href={p.url} target="_blank" rel="noopener noreferrer"
-                    className="font-sans text-xs tracking-widest uppercase text-accent hover:text-dark transition-colors">
-                    Live
-                  </a>
-                )}
-                {p.github && (
-                  <a href={p.github} target="_blank" rel="noopener noreferrer"
-                    className="font-sans text-xs tracking-widest uppercase text-muted hover:text-dark transition-colors">
-                    GitHub
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-1 gap-px bg-border md:grid-cols-2">
-          {rest.map((p) => (
-            <div key={p.id} className="bg-warm p-6 md:p-8 flex flex-col gap-3">
-              <h3 className="font-serif text-dark text-lg md:text-xl">{p.title}</h3>
-              <p className="font-sans text-muted text-sm leading-relaxed flex-1">{p.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {p.tags.map((t) => (
-                  <span key={t} className="font-sans text-xs text-subtle border border-border px-2 py-0.5">{t}</span>
-                ))}
-              </div>
-              <div className="flex gap-4 pt-1">
-                {p.url && (
-                  <a href={p.url} target="_blank" rel="noopener noreferrer"
-                    className="font-sans text-xs tracking-widest uppercase text-accent hover:text-dark transition-colors">
-                    Live
-                  </a>
-                )}
-                {p.github && (
-                  <a href={p.github} target="_blank" rel="noopener noreferrer"
-                    className="font-sans text-xs tracking-widest uppercase text-muted hover:text-dark transition-colors">
-                    GitHub
-                  </a>
-                )}
-              </div>
-            </div>
 
         {/* ---------- [3.2] grid การ์ด (ปรับจำนวนคอลัมน์ที่ md:grid-cols-2) ---------- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
