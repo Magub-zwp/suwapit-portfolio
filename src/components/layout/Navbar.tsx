@@ -51,7 +51,7 @@ export default function Navbar() {
           onClick={() => scrollTo("hero")}
           className="font-serif text-dark text-[1.1rem] tracking-wide hover:text-accent transition-colors"
         >
-          Suwapit Ponkul
+          Zuwapit Ponkul
         </button>
 
         {/* Desktop */}

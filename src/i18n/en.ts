@@ -12,18 +12,18 @@ export const en: Dictionary = {
     status: "Open to work",
   },
   hero: {
-    nameLine1: "Suwapit",
+    nameLine1: "Zuwapit",
     nameLine2: "Ponkul",
     role: "Junior Developer",
-    bio: "Started in hospital IT support, found what I love — now a 4th-year Computer Science student who enjoys building web and applications, and wants to grow into a developer worth having on your team.",
+    bio: "Started in hospital IT support, found my passion — now a 4th-year Computer Science student who enjoys building websites and applications, and wants to grow into a developer worth having on your team.",
     ctaProjects: "View Projects",
     ctaContact: "Contact",
     scroll: "Scroll",
   },
   about: {
     label: "About",
-    headingLine1: "A developer who builds",
-    headingLine2: "for the real world.",
+    headingLine1: "A tree thrives",
+    headingLine2: "when planted in the right pot.",
     paragraphs: [
       "I started out in IT Support at a subdistrict health promoting hospital — managing patient information systems, MySQL databases, and Linux servers. That experience taught me how to troubleshoot under pressure and solve real problems on the spot.",
       "While working, I taught myself web development — starting with PHP, then JavaScript, and eventually React and Next.js. My graduation project, GaragePlus, is a full-featured PWA built with Firebase and real-time sync. I also built a Queue Management System that is currently running in production at the hospital.",
