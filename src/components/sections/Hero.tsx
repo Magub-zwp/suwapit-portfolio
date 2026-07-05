@@ -7,8 +7,8 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section id="hero" className="min-h-screen flex flex-col">
-      <div className="flex-1 max-w-6xl mx-auto px-6 w-full py-24 md:py-0">
+    <section id="hero" className="lg:min-h-screen flex flex-col">
+      <div className="flex-1 max-w-6xl mx-auto px-6 w-full py-16 lg:py-0">
         <div className="grid md:grid-cols-2 gap-8 items-start">
           <div className="md:col-start-1 md:row-start-1 z-0 md:mt-14 lg:mt-20">
             <div className="mb-8 md:mb-10">
@@ -20,6 +20,7 @@ export default function Hero() {
             >
               {t.hero.nameLine1}<br />{t.hero.nameLine2}
             </h1>
+
             <div className="flex flex-wrap gap-4">
               <a
                 href="#projects"
@@ -36,7 +37,18 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="md:col-start-2 md:row-start-1 z-0 md:mt-36 lg:mt-44">
+          <div className="md:col-start-2 md:row-start-1 z-10 md:mt-36 lg:mt-44 lg:ml-12">
+            <div className="lg:hidden relative w-40 sm:w-48 md:w-56 aspect-[513/1171] mb-6 md:ml-5">
+              <Image
+                src="/images/me.png"
+                alt="Suwapit Ponkul"
+                fill
+                priority
+                sizes="224px"
+                className="object-contain object-bottom"
+              />
+            </div>
+
             <div className="flex items-center gap-4 mb-6 md:mb-8">
               <div className="h-px w-12 bg-accent flex-shrink-0" />
               <span className="font-sans text-sm tracking-widest uppercase text-muted">
@@ -47,10 +59,10 @@ export default function Hero() {
               {t.hero.bio}
             </p>
           </div>
-          
-          <div className="hidden md:block md:col-start-1 md:col-span-2 md:row-start-1 z-10 justify-self-start relative h-[80vh] aspect-[513/1171] md:ml-[260px] lg:ml-[297px] md:mt-[-80px] lg:mt-[13px]">
+
+          <div className="hidden lg:block lg:col-start-1 lg:col-span-2 lg:row-start-1 z-10 justify-self-start relative w-[27%] aspect-[513/1171] ml-[30%] lg:mt-[13px]">
             <Image
-              src="/images/hero-portrait.png"
+              src="/images/me.png"
               alt="Suwapit Ponkul"
               fill
               priority

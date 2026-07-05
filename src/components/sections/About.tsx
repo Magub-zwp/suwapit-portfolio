@@ -23,10 +23,10 @@ export default function About() {
               <p key={i}>{p}</p>
             ))}
           </div>
-          <div className="grid grid-cols-2 gap-px bg-border">
+          <div className="grid grid-cols-2 gap-px bg-border -mt-5 md:-mt-6">
             {facts.map((f) => (
-              <div key={f.label} className="bg-surface p-5 md:p-6 flex flex-col gap-2">
-                <span className="font-sans text-xs tracking-widest uppercase text-subtle">
+              <div key={f.label} className="bg-surface p-5 md:p-6 flex flex-col gap-2 ">
+                <span className="font-sans text-xs tracking-widest uppercase text-subtle ">
                   {f.label}
                 </span>
                 <span className="font-sans text-dark text-base leading-snug whitespace-pre-line">

@@ -1,22 +1,14 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Nunito, JetBrains_Mono, Prompt } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const nunito = Nunito({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  variable: "--font-dm-sans",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-nunito",
   display: "swap",
 });
 
@@ -24,6 +16,13 @@ const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
   variable: "--font-jetbrains",
+  display: "swap",
+});
+
+const prompt = Prompt({
+  subsets: ["thai", "latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-prompt",
   display: "swap",
 });
 
@@ -54,7 +53,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const fonts = [cormorant.variable, dmSans.variable, jetbrains.variable].join(" ");
+  const fonts = [nunito.variable, jetbrains.variable, prompt.variable].join(" ");
   return (
     <html lang="en" className={fonts + " antialiased"}>
       <body className="min-h-full flex flex-col">
