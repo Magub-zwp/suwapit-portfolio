@@ -43,12 +43,20 @@ export default function Contact() {
             <p className="font-sans text-muted leading-relaxed mb-8">
               {t.contact.blurb}
             </p>
-            <a
-              href="mailto:zuwapit.pon@gmail.com"
-              className="font-sans text-sm text-accent hover:text-cream transition-colors"
-            >
-              zuwapit.pon@gmail.com
-            </a>
+            <div className="flex flex-col gap-2">
+              <a
+                href="mailto:zuwapit.pon@gmail.com"
+                className="font-sans text-sm text-accent hover:text-cream transition-colors"
+              >
+                zuwapit.pon@gmail.com
+              </a>
+              <a
+                href="tel:08x-xxx-xxxx"
+                className="font-sans text-sm text-accent hover:text-cream transition-colors"
+              >
+                094-251-1680
+              </a>
+            </div>
           </div>
           <div>
             {status === "sent" ? (
