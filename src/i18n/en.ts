@@ -111,8 +111,8 @@ export const en: Dictionary = {
   },
   contact: {
     label: "Contact",
-    heading: "Say hello.",
-    blurb: "Open to junior developer roles and freelance projects. Feel free to reach out.",
+    heading: "Let's connect.",
+    blurb: "I'm currently looking for new opportunities. Whether you have a position available, a project in mind, or just want to chat, I'd love to hear from you.",
     namePlaceholder: "Name",
     emailPlaceholder: "Email",
     messagePlaceholder: "Message",
