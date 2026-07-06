@@ -83,7 +83,7 @@ export const th: Dictionary = {
         id: "garage-plus",
         title: "GaragePlus",
         description:
-          "PWA สำหรับจัดการอู่ซ่อมรถ พัฒนาเป็นโปรเจกต์จบการศึกษา จัดการใบสั่งงาน ข้อมูลลูกค้า และขั้นตอนการทำงานของช่าง พร้อม real-time sync ผ่าน Firebase",
+          "PWA สำหรับการจองคิวและให้บริการอู่ซ่อมรถ พัฒนาเป็นโปรเจกต์จบการศึกษา การจองคิวของลูกค้า และขั้นตอนการทำงานของช่าง แจ้งเตือนลูกค้าด้วยline Notify พร้อม real-time sync ผ่าน Firebase",
         tags: ["Next.js", "JavaScript", "Firebase", "Firestore", "Tailwind CSS"],
         github: "https://github.com/Magub-zwp/garage-plus",
         featured: true,
@@ -92,7 +92,7 @@ export const th: Dictionary = {
         id: "firstproject",
         title: "Task Management System",
         description:
-          "โปรเจกต์เต็มรูปแบบโปรเจกต์แรกที่สร้างตอนปี 2 — ระบบจัดการงาน/ภาระงาน ด้วย backend แบบ PHP กำลังอยู่ระหว่างการ deploy",
+          "โปรเจกต์เต็มรูปแบบโปรเจกต์แรกที่สร้างตอนปี 2 — ระบบจัดการงาน/ภาระงาน ด้วย backend แบบ PHP ",
         tags: ["PHP", "MySQL", "HTML", "CSS"],
         url: "https://tasklist.infinityfree.me/index.php",
         github: "https://github.com/Magub-zwp/firstproject",
@@ -102,7 +102,7 @@ export const th: Dictionary = {
         id: "jorddeepeekhum",
         title: "Jorddeepeekhum Parking App",
         description:
-          "แอปจอดรถบนมือถือที่พัฒนาด้วย Flutter เป็นโปรเจกต์ย่อยในวิชาเรียน รองรับการจองที่จอดรถและติดตามสถานะ",
+          "แอปจองที่จอดรถบนมือถือที่พัฒนาด้วย Flutter เป็นโปรเจกต์ย่อยในวิชาเรียน รองรับการจองที่จอดรถและติดตามสถานะ",
         tags: ["Flutter", "Dart"],
         github: "https://github.com/Magub-zwp/Jorddeepeekhum_app",
         featured: false,

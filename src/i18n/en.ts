@@ -83,7 +83,7 @@ export const en: Dictionary = {
         id: "garage-plus",
         title: "GaragePlus",
         description:
-          "Garage management PWA built as a thesis project. Handles job orders, customer records, and technician workflow with real-time sync via Firebase.",
+          "Garage management PWA built as a thesis project. Handles customer queue bookings and technician workflow, with LINE Notify alerts and real-time sync via Firebase.",
         tags: ["Next.js", "JavaScript", "Firebase", "Firestore", "Tailwind CSS"],
         github: "https://github.com/Magub-zwp/garage-plus",
         featured: true,
@@ -92,7 +92,7 @@ export const en: Dictionary = {
         id: "firstproject",
         title: "Task Management System",
         description:
-          "First full project built in second year — a task/work management system with PHP backend. Currently being deployed.",
+          "First full project built in second year — a task/work management system with PHP backend.",
         tags: ["PHP", "MySQL", "HTML", "CSS"],
         url: "https://tasklist.infinityfree.me/index.php",
         github: "https://github.com/Magub-zwp/firstproject",
