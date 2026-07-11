@@ -6,7 +6,7 @@ export default function Experience() {
   const experiences = t.experience.items;
 
   return (
-    <section id="experience" className="py-20 md:py-32 bg-surface">
+    <section id="experience" className="py-12 md:py-20 bg-surface">
       <div className="max-w-5xl mx-auto px-6">
         <p className="font-sans text-xs tracking-widest uppercase text-muted mb-4">{t.experience.label}</p>
         <h2

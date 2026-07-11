@@ -24,7 +24,7 @@ export default function Skills() {
   );
 
   return (
-    <section id="skills" className="py-20 md:py-32 bg-dark overflow-hidden">
+    <section id="skills" className="py-12 md:py-20 bg-dark overflow-hidden">
       <div className="max-w-5xl mx-auto px-6 mb-12 md:mb-16">
         <p className="font-sans text-xs tracking-widest uppercase text-subtle mb-4">{t.skills.label}</p>
         <h2

@@ -8,7 +8,7 @@ export default function Projects() {
   const rest = projects.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="py-20 md:py-32">
+    <section id="projects" className="py-12 md:py-20">
       <div className="max-w-5xl mx-auto px-6">
         <p className="font-sans text-xs tracking-widest uppercase text-muted mb-4">{t.projects.label}</p>
         <h2
