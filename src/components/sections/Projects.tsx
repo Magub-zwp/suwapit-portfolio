@@ -6,7 +6,7 @@ import type { ProjectItem } from "@/i18n/types";
 
 
 const PROJECT_IMAGES: Record<string, string[]> = {
-  "queue-system": [],
+  "queue-system": ["/images/projects/queue/opd.png","/images/projects/queue/dis.png","/images/projects/queue/doc.png","/images/projects/queue/nurse.png","/images/projects/queue/arc.png"],
   "garage-plus": ["/images/projects/179/login.png","/images/projects/179/home.png","/images/projects/179/book.png","/images/projects/179/L_admac.png","/images/projects/179/L_adpro.png"],
   "firstproject": ["/images/projects/task/tm-index1 .png","/images/projects/task/nav-2.png","/images/projects/task/login-3.png","/images/projects/task/dash-4.png","/images/projects/task/task5.png"],
   "jorddeepeekhum": [],
