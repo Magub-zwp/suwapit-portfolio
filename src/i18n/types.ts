@@ -37,6 +37,7 @@ export type Dictionary = {
     bio: string;
     ctaProjects: string;
     ctaContact: string;
+    ctaDownloadCV: string;
     scroll: string;
   };
   about: {

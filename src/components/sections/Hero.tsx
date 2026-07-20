@@ -4,7 +4,8 @@ import StatusBadge from "@/components/ui/StatusBadge";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const cvHref = `/cv/cv${lang}.pdf`;
 
   return (
     <section id="hero" className="lg:min-h-screen flex flex-col">
@@ -37,7 +38,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="md:col-start-2 md:row-start-1 z-10 md:mt-36 lg:mt-44 lg:ml-12">
+          <div className="md:col-start-2 md:row-start-1 z-20 md:mt-36 lg:mt-44 lg:ml-12">
             <div className="lg:hidden relative w-40 sm:w-48 md:w-56 aspect-[513/1171] mb-6 md:ml-5">
               <Image
                 src="/images/me.png"
@@ -58,6 +59,29 @@ export default function Hero() {
             <p className="font-sans text-muted text-base md:text-lg max-w-lg leading-relaxed mb-10 md:mb-12">
               {t.hero.bio}
             </p>
+
+            <a
+              href={cvHref}
+              download
+              className="inline-flex items-center gap-2 px-8 py-3 border border-border text-muted font-sans text-sm tracking-widest uppercase transition-colors hover:border-accent hover:text-accent"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 3v12" />
+                <path d="M7 10l5 5 5-5" />
+                <path d="M4 19h16" />
+              </svg>
+              {t.hero.ctaDownloadCV}
+            </a>
           </div>
 
           <div className="hidden lg:block lg:col-start-1 lg:col-span-2 lg:row-start-1 z-10 justify-self-start relative w-[27%] aspect-[513/1171] ml-[30%] lg:mt-[13px]">
