@@ -18,6 +18,7 @@ export const en: Dictionary = {
     bio: "Started in hospital IT support, found my passion — now a 4th-year Computer Science student who enjoys building websites and applications, and wants to grow into a developer worth having on your team.",
     ctaProjects: "View Projects",
     ctaContact: "Contact",
+    ctaDownloadCV: "Download CV",
     scroll: "Scroll",
   },
   about: {
