@@ -9,7 +9,7 @@ const PROJECT_IMAGES: Record<string, string[]> = {
   "queue-system": ["/images/projects/queue/opd.jpg","/images/projects/queue/dis.jpg","/images/projects/queue/doc.jpg","/images/projects/queue/nurse.jpg","/images/projects/queue/arc.jpg"],
   "garage-plus": ["/images/projects/179/login.png","/images/projects/179/home.png","/images/projects/179/book.png","/images/projects/179/L_admac.png","/images/projects/179/L_adpro.png"],
   "firstproject": ["/images/projects/task/tm-index1 .png","/images/projects/task/nav-2.png","/images/projects/task/login-3.png","/images/projects/task/dash-4.png","/images/projects/task/task5.png"],
-  "jorddeepeekhum": [],
+  "jorddeepeekhum": ["/images/projects/jorddee/mainpage.png","/images/projects/jorddee/loginpage.png","/images/projects/jorddee/addcarpage.png","/images/projects/jorddee/bookingpage.png","/images/projects/jorddee/pay.png","/images/projects/jorddee/receipt.png"],
 };
 
 /* ============================================================
@@ -27,6 +27,7 @@ function ProjectCard({
   const images = PROJECT_IMAGES[p.id] ?? [];
   const [idx, setIdx] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [live, setLive] = useState(false); // true = แสดง live iframe แทนรูป (เฉพาะตอน hover และมี p.url)
   const primaryLink = p.url ?? p.github; // ลูกศร Live ก่อน ไม่มีใช้ GitHub
 
   useEffect(() => {
@@ -39,13 +40,28 @@ function ProjectCard({
 
   return (
     <div className="group rounded-2xl overflow-hidden bg-dark flex flex-col">
-      {/* ----------  พื้นที่รูปภาพ (ปรับความสูงที่ aspect-[16/10]) ---------- */}
+      {/* ----------  พื้นที่รูปภาพ / live preview (ปรับความสูงที่ aspect-[16/10]) ---------- */}
       <div
         className="relative aspect-[16/10] overflow-hidden"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
+        onMouseEnter={() => {
+          setPaused(true);
+          if (p.url) setLive(true);
+        }}
+        onMouseLeave={() => {
+          setPaused(false);
+          setLive(false);
+        }}
       >
-        {images.length > 0 ? (
+        {live && p.url ? (
+          /* ---------- Live iframe preview — โหลดเฉพาะตอน hover เพื่อไม่ให้หน้าหนักตอนแรก ---------- */
+          <iframe
+            src={p.url}
+            title={`${p.title} live preview`}
+            loading="lazy"
+            className="absolute inset-0 w-full h-full border-0 pointer-events-none bg-cream"
+            style={{ transform: "scale(1.15)", transformOrigin: "top left" }}
+          />
+        ) : images.length > 0 ? (
           <Image
             src={images[idx]}
             alt={p.title}
@@ -62,16 +78,18 @@ function ProjectCard({
           </div>
         )}
 
-        {/* เงาไล่ดำด้านบน-ล่าง ให้ตัวหนังสือบนรูปอ่านง่าย */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40 pointer-events-none" />
+        {/* เงาไล่ดำด้านบน-ล่าง ให้ตัวหนังสือบนรูปอ่านง่าย (ปิดตอนโชว์ live iframe จะได้เห็นชัด) */}
+        {!live && (
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40 pointer-events-none" />
+        )}
 
-        {/* ---------- [2.3] badge มุมล่างซ้าย (ตอนนี้โชว์ tag ตัวแรก) ---------- */}
+        {/* ---------- [2.3] badge มุมล่างซ้าย (ตอนนี้โชว์ tag ตัวแรก หรือ "LIVE" ตอน hover) ---------- */}
         <span className="absolute bottom-4 left-4 font-sans text-xs text-cream bg-dark border border-accent/40 rounded-full px-3 py-1">
-          {p.tags[0]}
+          {live ? "● LIVE" : p.tags[0]}
         </span>
 
-        {/* ---------- [2.4] จุดสลับรูป (โผล่เฉพาะตอนมีมากกว่า 1 รูป) ---------- */}
-        {images.length > 1 && (
+        {/* ---------- [2.4] จุดสลับรูป (โผล่เฉพาะตอนมีมากกว่า 1 รูป และไม่ได้โชว์ live) ---------- */}
+        {!live && images.length > 1 && (
           <div className="absolute bottom-4 inset-x-0 flex justify-center gap-2">
             {images.map((_, i) => (
               <button
@@ -137,8 +155,9 @@ function ProjectCard({
 export default function Projects() {
   const { t } = useLanguage();
   const projects = t.projects.items;
-  // เรียง featured ขึ้นก่อน (อยากแยกกลุ่ม/ทำการ์ด featured ใหญ่กว่าค่อยปรับตรงนี้)
-  const items = [...projects.filter((p) => p.featured), ...projects.filter((p) => !p.featured)];
+  const featuredItems = projects.filter((p) => p.featured);
+  const moreItems = projects.filter((p) => !p.featured);
+  const [showMore, setShowMore] = useState(false);
 
   return (
     <section id="projects" className="py-12 md:py-20">
@@ -152,12 +171,34 @@ export default function Projects() {
           {t.projects.heading}
         </h2>
 
-        {/* ---------- [3.2] grid การ์ด (ปรับจำนวนคอลัมน์ที่ md:grid-cols-2) ---------- */}
+        {/* ---------- [3.2] grid การ์ด featured (ปรับจำนวนคอลัมน์ที่ md:grid-cols-2) ---------- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {items.map((p) => (
+          {featuredItems.map((p) => (
             <ProjectCard key={p.id} p={p} liveLabel={t.projects.live} githubLabel={t.projects.github} />
           ))}
         </div>
+
+        {/* ---------- [3.3] ผลงานที่ไม่ได้โชว์เป็นหลัก — ซ่อนไว้หลังปุ่ม "ดูผลงานเพิ่มเติม" ---------- */}
+        {moreItems.length > 0 && (
+          <>
+            {showMore && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                {moreItems.map((p) => (
+                  <ProjectCard key={p.id} p={p} liveLabel={t.projects.live} githubLabel={t.projects.github} />
+                ))}
+              </div>
+            )}
+
+            <div className="flex justify-center mt-10">
+              <button
+                onClick={() => setShowMore((v) => !v)}
+                className="font-sans text-xs tracking-widest uppercase text-accent border border-accent/40 rounded-full px-6 py-3 hover:bg-accent hover:text-dark hover:border-accent transition-colors"
+              >
+                {showMore ? t.projects.seeLess : t.projects.seeMore}
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </section>
   );

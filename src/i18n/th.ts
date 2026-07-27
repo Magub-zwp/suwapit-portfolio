@@ -70,6 +70,8 @@ export const th: Dictionary = {
     heading: "สิ่งที่ผมพัฒนาขึ้น",
     live: "เว็บไซต์",
     github: "GitHub",
+    seeMore: "ดูผลงานเพิ่มเติม",
+    seeLess: "ย่อกลับ",
     items: [
       {
         id: "queue-system",
@@ -86,7 +88,27 @@ export const th: Dictionary = {
         description:
           "PWA สำหรับการจองคิวและให้บริการอู่ซ่อมรถ พัฒนาเป็นโปรเจกต์จบการศึกษา การจองคิวของลูกค้า และขั้นตอนการทำงานของช่าง แจ้งเตือนลูกค้าด้วยline Notify พร้อม real-time sync ผ่าน Firebase",
         tags: ["Next.js", "JavaScript", "Firebase", "Firestore", "Tailwind CSS"],
+        url: "https://garageplus.shop",
         github: "https://github.com/Magub-zwp/garage-plus",
+        featured: true,
+      },
+      {
+        id: "zwpweb-trainai",
+        title: "ZWP Train AI",
+        description:
+          "เว็บแอป full-stack ที่พัฒนาระหว่างอบรม AI Vibe Coding ของมหาวิทยาลัย — สาธิตการสั่งงาน AI อย่างมีประสิทธิภาพด้วยการออกแบบโครงสร้างข้อมูลที่มีคุณภาพทั้งฝั่ง backend และ frontend ทดลองเข้าสู่ระบบ — admin / admin123",
+        tags: ["Next.js", "TypeScript", "Prisma", "MySQL", "Tailwind CSS"],
+        github: "https://github.com/Magub-zwp/zwpweb-trainai",
+        featured: true,
+      },
+      {
+        id: "medical-equipment-borrowing",
+        title: "Medical Equipment Borrowing (MEBS)",
+        description:
+          "ระบบยืม-คืนและจัดการคลังอุปกรณ์การแพทย์ พัฒนาด้วยตัวเองจากความรู้ที่ได้จากการอบรม AI Vibe Coding และนำไปใช้งานจริงที่โรงพยาบาล มี dashboard ผู้ดูแล ระบบสัญญายืมพร้อมลายเซ็นดิจิทัลและ export PDF ระบบสแกนคืนอุปกรณ์ และจัดการคลัง (CRUD) ทดลองเข้าสู่ระบบ — admin / admin123",
+        tags: ["Next.js", "TypeScript", "Prisma", "MySQL", "Better Auth"],
+        url: "https://borrow-mocha.vercel.app",
+        github: "https://github.com/Magub-zwp/Medical-Equipment-Borrowing",
         featured: true,
       },
       {

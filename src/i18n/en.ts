@@ -70,6 +70,8 @@ export const en: Dictionary = {
     heading: "Things I have built.",
     live: "Live",
     github: "GitHub",
+    seeMore: "See more projects",
+    seeLess: "Show less",
     items: [
       {
         id: "queue-system",
@@ -86,7 +88,27 @@ export const en: Dictionary = {
         description:
           "Garage management PWA built as a thesis project. Handles customer queue bookings and technician workflow, with LINE Notify alerts and real-time sync via Firebase.",
         tags: ["Next.js", "JavaScript", "Firebase", "Firestore", "Tailwind CSS"],
+        url: "https://garageplus.shop",
         github: "https://github.com/Magub-zwp/garage-plus",
+        featured: true,
+      },
+      {
+        id: "zwpweb-trainai",
+        title: "ZWP Train AI",
+        description:
+          "Full-stack web app built during a university AI Vibe Coding workshop — demonstrating how to direct AI effectively by designing quality data structures across backend and frontend. Demo login — admin / admin123.",
+        tags: ["Next.js", "TypeScript", "Prisma", "MySQL", "Tailwind CSS"],
+        github: "https://github.com/Magub-zwp/zwpweb-trainai",
+        featured: true,
+      },
+      {
+        id: "medical-equipment-borrowing",
+        title: "Medical Equipment Borrowing (MEBS)",
+        description:
+          "Medical equipment borrowing and inventory system, built solo from AI Vibe Coding workshop knowledge and deployed at my hospital workplace. Features admin dashboard, rental contract wizard with digital signature and PDF export, scan-and-return flow, and inventory CRUD. Demo login — admin / admin123.",
+        tags: ["Next.js", "TypeScript", "Prisma", "MySQL", "Better Auth"],
+        url: "https://borrow-mocha.vercel.app",
+        github: "https://github.com/Magub-zwp/Medical-Equipment-Borrowing",
         featured: true,
       },
       {

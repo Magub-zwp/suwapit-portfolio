@@ -62,6 +62,8 @@ export type Dictionary = {
     heading: string;
     live: string;
     github: string;
+    seeMore: string;
+    seeLess: string;
     items: ProjectItem[];
   };
   contact: {
