@@ -9,6 +9,14 @@ export type ExperienceItem = {
   highlights: string[];
 };
 
+export type CertificateItem = {
+  id: string;
+  title: string;
+  issuer: string;
+  year: string;
+  images?: string[]; // path ใน public เช่น /images/certificates/xxx.png (หลายหน้าได้)
+};
+
 export type ProjectItem = {
   id: string;
   title: string;
@@ -56,6 +64,12 @@ export type Dictionary = {
     label: string;
     heading: string;
     items: ExperienceItem[];
+  };
+  certificates: {
+    label: string;
+    heading: string;
+    view: string;
+    items: CertificateItem[];
   };
   projects: {
     label: string;

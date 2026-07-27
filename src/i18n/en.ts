@@ -28,13 +28,13 @@ export const en: Dictionary = {
     paragraphs: [
       "I started out in IT Support at a subdistrict health promoting hospital — managing patient information systems, MySQL databases, and Linux servers. That experience taught me how to troubleshoot under pressure and solve real problems on the spot.",
       "While working, I taught myself web development — starting with PHP, then JavaScript, and eventually React and Next.js. My graduation project, GaragePlus, is a full-featured PWA built with Firebase and real-time sync. I also built a Queue Management System that is currently running in production at the hospital.",
-      "I'm currently in my 4th year of Computer Science (expected to graduate in 2027) and ready to grow as a junior developer who genuinely contributes to the team.",
+      "I'm currently in my 4th year of Computer Science (expected to graduate in Feb 2027) and ready to grow as a junior developer who genuinely contributes to the team.",
     ],
     facts: [
       { label: "Current Role", value: "IT Officer, BaanTonpao Subdistrict Hospital" },
       {
         label: "Education",
-        value: "2022-Present\nB.Sc. Computer Science\nChiang Mai Rajabhat University\nGPA 3.22 | Weekend Program\n (expected to graduate in 2027)",
+        value: "2022-Present\nB.Sc. Computer Science\nChiang Mai Rajabhat University\nGPA 3.22 | Weekend Program\n (expected to graduate in Feb 2027)",
       },
       { label: "Focus", value: "Junior Developer" },
       { label: "Based in", value: "Chiang Mai, Thailand" },
@@ -62,6 +62,44 @@ export const en: Dictionary = {
           "Support staff with day-to-day IT operations",
           "Built internal Queue Management System with Next.js and Prisma",
         ],
+      },
+    ],
+  },
+  certificates: {
+    label: "Certificates",
+    heading: "Trained, then built.",
+    view: "View certificate",
+    items: [
+      {
+        id: "scitech-conference",
+        title: "Oral Presentation (GaragePlus) — 4th National Science & Technology Conference",
+        issuer: "Faculty of Science and Technology, CMRU",
+        year: "2026",
+        images: ["/images/certificates/scitech-conference-2026.png"],
+      },
+      {
+        id: "speexx-english",
+        title: "Speexx English Certificate — CEFR B1.2 (95/100)",
+        issuer: "Speexx",
+        year: "2026",
+        images: [
+          "/images/certificates/speexx-english-b12-p1.png",
+          "/images/certificates/speexx-english-b12-p2.png",
+        ],
+      },
+      {
+        id: "digital-skills",
+        title: "Digital Competency & Skills Program for Final-Year Students",
+        issuer: "Department of Computer Science, CMRU",
+        year: "2026",
+        images: ["/images/certificates/digital-skills-2026.png"],
+      },
+      {
+        id: "digital-literacy",
+        title: "Digital Literacy Readiness Course (CMRU MOOCs)",
+        issuer: "Office of Digital Education, CMRU",
+        year: "2026",
+        images: ["/images/certificates/digital-literacy-mooc-2026.png"],
       },
     ],
   },
