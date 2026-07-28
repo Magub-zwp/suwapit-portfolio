@@ -134,7 +134,7 @@ export const en: Dictionary = {
         id: "zwpweb-trainai",
         title: "ZWP Train AI",
         description:
-          "Full-stack web app built during a university AI Vibe Coding workshop — demonstrating how to direct AI effectively by designing quality data structures across backend and frontend. Demo login — admin / admin123.",
+          "Full-stack web app built during a university AI Vibe Coding workshop — demonstrating how to direct AI effectively by designing quality data structures across backend and frontend. Guest login — guest@test.com / test1234 (view content and browse categories).",
         tags: ["Next.js", "TypeScript", "Prisma", "MySQL", "Tailwind CSS"],
         github: "https://github.com/Magub-zwp/zwpweb-trainai",
         featured: true,
