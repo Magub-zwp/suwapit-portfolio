@@ -7,8 +7,8 @@
   /* ── Colors ── */
   --color-warm:         #F2EDE5;   /* page background        → bg-warm        */
   --color-surface:      #E8E1D5;   /* card / section bg      → bg-surface      */
-  --color-dark:         #2C1A10;   /* text + dark section bg → bg-dark, text-dark */
-  --color-dark-2:       #3D2510;   /* hover state on dark    → bg-dark-2       */
+  --color-dark:         #3A2315;   /* text + dark section bg → bg-dark, text-dark */
+  --color-dark-2:       #4A2D1C;   /* hover state on dark    → bg-dark-2       */
   --color-muted:        #7A5C48;   /* secondary text         → text-muted      */
   --color-cream:        #F2EDE5;   /* light text on dark bg  → text-cream      */
   --color-subtle:       #A08070;   /* placeholder / caption  → text-subtle     */
@@ -122,3 +122,4 @@ code, pre, kbd {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
